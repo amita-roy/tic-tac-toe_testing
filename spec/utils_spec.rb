@@ -31,5 +31,23 @@ describe Utils do
         expect(validate_name('2224444')).to eq(error3)
       end
     end
+
+    context 'with valid input' do
+      it 'checks the return result is an instance of String' do
+        expect(validate_name('Remo')).to be_instance_of(String)
+      end
+
+      it 'checks if the name strings have letters' do
+        expect(validate_name('Remo')).to match(/[a-zA-z]/)
+      end
+
+      it 'name strings have length of 3 or greater' do
+        expect(validate_name('Remo').length).to be > 3
+      end
+
+      it 'checks if result string doesn\'t have any white space' do
+        expect(validate_name('   Remo    ')).to eq('Remo')
+      end
+    end
   end
 end
