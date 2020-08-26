@@ -46,4 +46,18 @@ describe Board do
       expect(board.display).to include('2', '5', '7')
     end
   end
+
+  describe '#update_board' do
+    it 'is updated the display_board attribute' do
+      expect { board.update_board(2, 'X') }.to(change { board.display_board })
+    end
+
+    it 'checks if display_board include strings of signs and numbers' do
+      updated_display = board.update_board(2, 'X')
+      expect(updated_display).to include('X')
+
+      updated_display = board.update_board(5, 'O')
+      expect(updated_display).to include('O')
+    end
+  end
 end
