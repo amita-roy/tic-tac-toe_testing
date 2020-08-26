@@ -50,4 +50,13 @@ describe Utils do
       end
     end
   end
+
+  describe '#validate_selection' do
+    let(:selection_error1) { 'The position has already been taken, please select another number' }
+    let(:selection_error2) { 'Use numbers between 1 to 9' }
+
+    it 'allows board class to have validate_selection method with arguments' do
+      allow(board).to receive(:validate_selection).with(2, board.display_board).and_return(2)
+    end
+  end
 end
