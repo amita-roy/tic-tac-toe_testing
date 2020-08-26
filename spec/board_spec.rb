@@ -30,4 +30,10 @@ describe Board do
       expect(board.display_board).not_to eq(updated_board)
     end
   end
+
+  context 'display_board' do
+    it 'has a length of 9' do
+      expect(board.display_board.length).to eq(9)
+    end
+  end
 end
