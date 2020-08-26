@@ -36,4 +36,14 @@ describe Board do
       expect(board.display_board.length).to eq(9)
     end
   end
+
+  describe '#display' do
+    it 'check if the return value is a string' do
+      expect(board.display).to be_instance_of(String)
+    end
+
+    it 'checks if display result is strings of number ' do
+      expect(board.display).to include('2', '5', '7')
+    end
+  end
 end
