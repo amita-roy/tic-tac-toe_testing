@@ -87,4 +87,17 @@ describe Utils do
       end
     end
   end
+
+  describe '#indexes_of_sign' do
+    let(:board_with_sign) { [0, 'X', 2, 3, 'X', 5, 6, 'X', 8, 9] }
+    context 'with valid input' do
+      it 'allows game class to have indexes_of_sign method' do
+        allow(game).to receive(:indexes_of_sign).with('X', board.display_board).and_return([1, 4, 7])
+      end
+
+      it 'checks if the return result is an instance of Array' do
+        expect(indexes_of_sign('X', board.display_board)).to be_instance_of(Array)
+      end
+    end
+  end
 end
