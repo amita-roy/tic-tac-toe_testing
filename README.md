@@ -99,6 +99,27 @@ _Run the tests with the command:_
 
 ![screenshot](.github/coverage.png)
 
+## Test Coverage
+
+**Step 1**:
+
+`gem install simplecov`
+
+**Step 2**:
+
+_Add the below code on the top of the `spec_helper.rb`_
+
+`require 'simplecov'`
+
+`SimpleCov.start do`
+`add_filter '/spec/'`
+`end`
+
+**Step 3**:
+
+_After running the rspec command in the terminal, a coverage directory will be generated_
+_copy the path of index.html and open it in browser to check the test coverage_
+
 ## Authors
 
 👤 **Cristian Viorel Ceamatu**
