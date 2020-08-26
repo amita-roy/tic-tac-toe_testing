@@ -21,4 +21,10 @@ describe Player do
       expect(player.sign).to be_instance_of(String)
     end
   end
+
+  context 'sign attribute' do
+    it "checks if sign attribute has value of either 'X' or 'O' " do
+      expect(player.sign).to match('X') || match('O')
+    end
+  end
 end
