@@ -58,5 +58,23 @@ describe Utils do
     it 'allows board class to have validate_selection method with arguments' do
       allow(board).to receive(:validate_selection).with(2, board.display_board).and_return(2)
     end
+
+    context 'with valid input' do
+      it 'checks if provided arguments are valid' do
+        expect(validate_selection(2, board.display_board)).to eq(2)
+      end
+
+      it 'checks if first argument for selction has not been taken' do
+        expect(validate_selection(4, [1, 'X', 3, 'O', 5, 'X', 7, 8, 9])).not_to eq(selection_error1)
+      end
+
+      it 'checks if the return result is an instance of Integer' do
+        expect(result).to be_instance_of(Integer)
+      end
+
+      it 'checks if selection inputs is a number between 0 to 8' do
+        expect((0..8)).to cover(result)
+      end
+    end
   end
 end
