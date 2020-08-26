@@ -76,5 +76,15 @@ describe Utils do
         expect((0..8)).to cover(result)
       end
     end
+
+    context 'with invalid input' do
+      it 'checks if first argument for selction has been taken' do
+        expect(validate_selection(3, [1, 'X', 3, 'O', 5, 'X', 7, 8, 9])).to eq(selection_error1)
+      end
+
+      it 'checks if first argument for selction is greater than 8' do
+        expect(validate_selection(12, [1, 'X', 3, 'O', 5, 'X', 7, 8, 9])).to eq(selection_error2)
+      end
+    end
   end
 end
